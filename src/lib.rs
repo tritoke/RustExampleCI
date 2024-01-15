@@ -1,14 +1,11 @@
 pub fn rot13(s: &str) -> String {
-    let a_really_long_name_thats_fucking_pointless = s
-        .bytes()
+    s.bytes()
         .map(|c| match c {
             b'a'..=b'z' => b'a' + ((c - b'a') + 13) % 26,
             b'A'..=b'Z' => b'A' + ((c - b'A') + 13) % 26,
             _ => c,
         } as char)
-        .collect();
-
-    return a_really_long_name_thats_fucking_pointless;
+        .collect()
 }
 
 #[cfg(test)]
